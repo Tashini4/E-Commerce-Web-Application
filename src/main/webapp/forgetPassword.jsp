@@ -1,9 +1,15 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: tashi
+  Date: 24/01/2025
+  Time: 22:32
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Forget_Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -18,11 +24,11 @@
         font-family: 'Poppins',sans-serif;
     }
     form{
-        width: 30%;
+        width: 40%;
         background-color: white;
         padding: 50px;
         border-radius: 20px;
-        margin-top: 50px;
+        margin-top: 30px;
     }
     .btn-primary{
         width: 100%;
@@ -53,25 +59,24 @@
 <body>
 <div class="container-fluid">
     <form action="" method="" class="mx-auto">
-        <h4 class="text-center">Welcome Back!</h4>
+        <h4 class="text-center">Forget Password</h4>
         <div class="mb-3 mt-4">
-            <label for="username" class="form-label">User Name</label>
-            <input type="name" class="form-control" id="username" placeholder="Enter User Name">
+            <label for="username" class="form-label">Your Email</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter Your Email">
+        </div>
+        <div class="mb-3 mt-4">
+            <label for="password" class="form-label">New Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter Your Password">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
-            <div class="mt-3">
-                <a href="forgetPassword.jsp" class="text-decoration-none">Forgot Password?</a>
-            </div>
+            <label for="password1" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="password1" placeholder="Re-Enter Your Password">
         </div>
-        <%--<button type="submit" class="btn btn-primary mt-2">Login</button>--%>
-        <a href="customerdashboard.jsp"><button type="submit" class="btn btn-primary mt-2">Login</button></a>
-        <div class="text-center mt-4">
-            <p>Don't have an account? <a href="signup.jsp" class="text-decoration-none">Sign Up</a></p>
-        </div>
+        <button type="submit" class="btn btn-primary mt-2">Change Password</button>
+
     </form>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
