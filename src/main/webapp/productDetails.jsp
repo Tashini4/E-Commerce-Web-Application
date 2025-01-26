@@ -95,43 +95,22 @@
 
    .home .content{
        flex: 1 1 400px;
-       margin-left: 250px;
+       margin-left: 350px;
    }
    .content h3{
        color: white;
-       font-size: 60px;
+       font-size: 80px;
        font-weight: bold;
        text-shadow: 1px 1px 1px black;
    }
    .content h2{
-       font-size: 60px;
-       color: white;
-       text-shadow: 1px 1px 1px black;
+       margin-left: 200px;
+       font-size: 80px;
+       text-shadow:1px 1px 1px black ;
+       color: peru;
        font-weight: bold;
    }
-   .changecontent::after{
-       content: '';
-       color: rgba(161,109,14,1);
-       animation: changetext 10s infinite linear;
-       font-weight: bold;
-   }
-   @keyframes changetext{
-       0%{
-           content: "Birthday Cake";
-       }
-       20%{
-           content: "Chocolate Cake";
-       }
-       50%{
-           content: "Party Cake";
-       }
-       60%{
-           content: "Slice Cake";
-       }
-       100%{
-           content: "Cup Cake";
-       }
-   }
+
 
    @media screen and (max-width: 800px){
        .content h3{
@@ -158,7 +137,8 @@
    }
    /*home section end*/
 
-  /*  chocolate product*/
+
+   /*  chocolate product*/
    #product-cards h1{
        text-align: center;
        font-weight: bold;
@@ -308,31 +288,34 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="customerDashboard.jsp">Home</a>
                 </li>
                 <%--dropdown--%>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
+                    <a href="productDetails.jsp" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Birthday Cake</a>
-                        <a href="#" class="dropdown-item">Chocolate Cake</a>
-                        <a href="#" class="dropdown-item">Party Cake</a>
-                        <a href="#" class="dropdown-item">Slice Cake</a>
-                        <a href="#" class="dropdown-item">Cup Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Birthday Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Chocolate Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Party Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Slice Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Cup Cake</a>
                     </div>
                 </li>
                 <%--dropdown--%>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
+                    <a class="nav-link" href="cart.jsp">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Order</a>
+                    <a class="nav-link" href="order.jsp">Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">LogOut</a>
                 </li>
             </ul>
         </div>
@@ -347,12 +330,8 @@
         <%--home section--%>
         <div class="home">
             <div class="content">
-                <h3>Delicious Cakes Bakery
-                </h3>
-                <h2>Category <span class="changecontent"></span></h2>
-               <%-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
-                    <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>--%>
+                <h3>Delicious Cakes Bakery</h3>
+                <h2>Product Details</h2>
             </div>
 
         </div>

@@ -168,27 +168,30 @@
                 </li>
                 <%--dropdown--%>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
+                    <a href="productDetails.jsp" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Birthday Cake</a>
-                        <a href="#" class="dropdown-item">Chocolate Cake</a>
-                        <a href="#" class="dropdown-item">Party Cake</a>
-                        <a href="#" class="dropdown-item">Slice Cake</a>
-                        <a href="#" class="dropdown-item">Cup Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Birthday Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Chocolate Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Party Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Slice Cake</a>
+                        <a href="productDetails.jsp" class="dropdown-item">Cup Cake</a>
                     </div>
                 </li>
                 <%--dropdown--%>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
+                    <a class="nav-link" href="cart.jsp">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Order</a>
+                    <a class="nav-link" href="order.jsp">Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">LogOut</a>
                 </li>
             </ul>
         </div>

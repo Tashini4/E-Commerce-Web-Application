@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String alertType = (String) request.getAttribute("alertType");
+    String alertMessage = (String) request.getAttribute("alertMessage");
+%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -21,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Uchen&display=swap" rel="stylesheet">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
     *{
@@ -174,21 +179,6 @@
         color: #2e1700;
         font-weight: bold;
     }
-    /*#product-cards .btn{
-        width: 100px;
-        height: 26px;
-        font-size: 15px;
-        background: #573818;
-        color: white;
-        letter-spacing: 3px;
-        border: 2px solid #573818;
-        border-radius: 5px;
-        margin-bottom: 3px;
-        float:right;
-        transition: 0.5s ease;
-        cursor: pointer;
-    }*/
-
     #product-cards .btn-warning{
         width: 80px;
         height: 26px;
@@ -213,13 +203,13 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="adminDashboard.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href="productDetails.jsp">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                    <a class="nav-link" href="order.jsp">Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Users</a>
@@ -239,24 +229,36 @@
         <%--Form--%>
         <div class="container-fluid">
             <h1>Add New Product</h1>
-            <form action="" method="" class="mx-auto">
+            <form action="productAddServlet" method="Post" class="mx-auto">
+                <div class="mb-3 mt-4">
+                    <label for="productId" class="form-label">Product ID</label>
+                    <input type="number" class="form-control" id="productId" >
+                </div>
                 <div class="mb-3 mt-4">
                     <label for="name" class="form-label">Product Name</label>
                     <input type="text" class="form-control" id="name" >
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" rows="5"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="categoryId" class="form-label">Category ID</label>
+                    <input type="number" class="form-control" id="categoryId">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Product Price</label>
                     <input type="text" class="form-control" id="price">
                 </div>
                 <div class="mb-3">
-                    <label for="detail" class="form-label">Product Detail</label>
-                    <textarea class="form-control" id="detail" rows="5"></textarea>
+                    <label for="qty" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="qty">
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Product Image</label>
                     <input class="form-control" type="file" id="image">
                 </div>
-                <a href="customerdashboard.jsp"><button type="submit" class="btn btn-primary mt-2">Add Product</button></a>
+                <a href="customerDashboard.jsp"><button type="submit" class="btn btn-primary mt-2">Add Product</button></a>
             </form>
         </div>
         <%--Form--%>
@@ -279,8 +281,8 @@
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <h6 class="text-center">Rs.1000</h6>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                             </div>
                         </div>
                     </div>
@@ -298,8 +300,8 @@
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <h6 class="text-center">Rs.350</h6>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
 
                             </div>
                         </div>
@@ -318,8 +320,8 @@
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <h6 class="text-center">Rs.1300</h6>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                             </div>
                         </div>
                     </div>
@@ -337,8 +339,8 @@
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <h6 class="text-center">Rs.1500</h6>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                             </div>
                         </div>
                     </div>
@@ -358,8 +360,8 @@
                                     </div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     <h6 class="text-center">Rs.750</h6>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                    <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                    <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                                 </div>
                             </div>
                         </div>
@@ -377,8 +379,8 @@
                                     </div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     <h6 class="text-center">Rs.400</h6>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                    <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                    <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                                 </div>
                             </div>
                         </div>
@@ -396,8 +398,8 @@
                                     </div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     <h6 class="text-center">Rs.1500</h6>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                    <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                    <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                                 </div>
                             </div>
                         </div>
@@ -415,8 +417,8 @@
                                     </div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     <h6 class="text-center">Rs.1700</h6>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
-                                    <a href="#"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
+                                    <a href="productUpdate.jsp"><button type="submit" class="btn btn-warning mt-2">Edit</button></a>
+                                    <a href="productDelete.jsp"><button type="submit" class="btn btn-warning mt-2">Delete</button></a>
                                 </div>
                             </div>
                         </div>
@@ -424,6 +426,16 @@
         </section>
         <%--product card end--%>
 </div>
+<script>
+    <% if (alertType != null && alertMessage != null) {%>
+
+    Swal.fire({
+        icon: '<%= alertType %>',
+        title: '<%= alertMessage %>',
+        confirmButtonText: 'OK'
+    });
+    <% } %>
+</script>
 
 </body>
 </html>

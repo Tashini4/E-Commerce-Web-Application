@@ -135,19 +135,22 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="adminDashboard.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href="productAdd.jsp">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                    <a class="nav-link" href="adminOrder.jsp">Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Users</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Message</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">LogOut</a>
                 </li>
             </ul>
         </div>

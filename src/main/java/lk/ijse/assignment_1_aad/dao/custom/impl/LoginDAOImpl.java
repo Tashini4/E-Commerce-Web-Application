@@ -1,5 +1,6 @@
 package lk.ijse.assignment_1_aad.dao.custom.impl;
 
+
 import lk.ijse.assignment_1_aad.config.FactoryConfiguration;
 import lk.ijse.assignment_1_aad.dao.custom.LoginDAO;
 import lk.ijse.assignment_1_aad.entity.Login;
@@ -9,9 +10,10 @@ import org.hibernate.Transaction;
 import java.sql.SQLException;
 import java.util.List;
 
+
 public class LoginDAOImpl implements LoginDAO {
     @Override
-    public boolean save(Login entity)throws Exception{
+    public boolean save(Login entity) throws Exception {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction tx = session.beginTransaction();
         session.save(entity);
@@ -20,15 +22,16 @@ public class LoginDAOImpl implements LoginDAO {
         return true;
     }
     @Override
-    public boolean update(Login entity) throws Exception{
+    public boolean update(Login entity) throws Exception {
         return false;
     }
     @Override
-    public boolean delete(int id) throws Exception{
+    public boolean delete(int ID) throws Exception {
         return false;
     }
-    public List<getAll> throws SQLException,ClassNotFoundException {
-        return List.of;
+    @Override
+    public List<Login> getAll() throws SQLException, ClassNotFoundException {
+        return List.of();
     }
     @Override
     public Login getLastLogin() {
@@ -53,4 +56,6 @@ public class LoginDAOImpl implements LoginDAO {
 
         return lastLogin;
     }
+
 }
+

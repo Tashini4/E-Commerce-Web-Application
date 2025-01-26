@@ -1,4 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="lk.ijse.assignment_1_aad.dao.custom.LoginDAO" %>
+<%@ page import="lk.ijse.assignment_1_aad.dao.custom.UserDAO" %>
+<%@ page import="lk.ijse.assignment_1_aad.dao.DAOFactory" %>
+<%@ page import="lk.ijse.assignment_1_aad.entity.Login" %>
+<%@ page import="lk.ijse.assignment_1_aad.entity.User" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,23 +59,27 @@
 </style>
 <body>
 <div class="container-fluid">
-    <form action="" method="" class="mx-auto">
+    <% String error = (String) request.getAttribute("error"); %>
+    <% if (error != null) { %>
+    <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form action="login-Servlet" method="post" class="mx-auto">
         <h4 class="text-center">Welcome Back!</h4>
         <div class="mb-3 mt-4">
-            <label for="username" class="form-label">User Name</label>
-            <input type="name" class="form-control" id="username" placeholder="Enter User Name">
+            <label for="username" class="form-label">User Email</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter User Email">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
             <div class="mt-3">
-                <a href="forgetPassword.jsp" class="text-decoration-none">Forgot Password?</a>
+                <a href="userUpdate.jsp" class="text-decoration-none">Forgot Password?</a>
             </div>
         </div>
         <%--<button type="submit" class="btn btn-primary mt-2">Login</button>--%>
-        <a href="customerdashboard.jsp"><button type="submit" class="btn btn-primary mt-2">Login</button></a>
+        <a href="customerDashboard.jsp" class="btn btn-primary mt-2">Login</a>
         <div class="text-center mt-4">
-            <p>Don't have an account? <a href="signup.jsp" class="text-decoration-none">Sign Up</a></p>
+            <p>Don't have an account? <a href="userRegister.jsp" class="text-decoration-none">Sign Up</a></p>
         </div>
     </form>
 </div>

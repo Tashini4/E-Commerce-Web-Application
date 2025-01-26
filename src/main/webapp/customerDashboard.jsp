@@ -99,16 +99,16 @@
     }
     .home .content{
         flex: 1 1 400px;
-        margin-left: 60px;
+        margin-left: 80px;
     }
     .content h3{
         color: white;
-        font-size: 40px;
+        font-size: 60px;
         font-weight: bold;
         text-shadow: 1px 1px 1px black;
     }
     .content h2{
-        font-size: 40px;
+        font-size: 60px;
         color: white;
         text-shadow: 1px 1px 1px black;
         font-weight: bold;
@@ -509,17 +509,17 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="customerDashboard.jsp">Home</a>
                     </li>
                     <%--dropdown--%>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
+                        <a href="productDetails.jsp" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Birthday Cake</a>
-                            <a href="#" class="dropdown-item">Chocolate Cake</a>
-                            <a href="#" class="dropdown-item">Party Cake</a>
-                            <a href="#" class="dropdown-item">Slice Cake</a>
-                            <a href="#" class="dropdown-item">Cup Cake</a>
+                            <a href="productDetails.jsp" class="dropdown-item">Birthday Cake</a>
+                            <a href="productDetails.jsp" class="dropdown-item">Chocolate Cake</a>
+                            <a href="productDetails.jsp" class="dropdown-item">Party Cake</a>
+                            <a href="productDetails.jsp" class="dropdown-item">Slice Cake</a>
+                            <a href="productDetails.jsp" class="dropdown-item">Cup Cake</a>
                         </div>
                     </li>
                     <%--dropdown--%>
@@ -527,13 +527,16 @@
                         <a class="nav-link" href="#">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Order</a>
+                        <a class="nav-link" href="order.jsp">Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.jsp">LogOut</a>
                     </li>
                 </ul>
             </div>
@@ -555,7 +558,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
                     <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
-                <a href="#" class="btn">Order Now</a>
+                <a href="order.jsp" class="btn ">Order Now</a>
             </div>
             <div class="img">
                 <img src="assests/image/cake/homeImage.png" alt="">
@@ -591,7 +594,9 @@
                 <h3>Delicious Cake</h3>
                 <h2>UPTO 50% OFF</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <div id="btnorder"><button>Order Now</button></div>
+                <div id="btnorder">
+                        <a href="order.jsp" class="btn submit-btn">Order Now</a>
+                </div>
             </div>
             <div class="img">
                 <img src="assests/image/cake/page3.jpeg" alt="">
@@ -915,13 +920,6 @@
         </footer>
         <%--footer--%>
         <a href="" class="arrow"><i><img src="assests/image/cake/arrow.png" alt="" width="50px"></i></a>
-
-
-
-
-
-
-
 
 </div>
 </body>

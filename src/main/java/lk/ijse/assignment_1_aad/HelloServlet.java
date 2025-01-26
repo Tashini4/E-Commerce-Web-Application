@@ -5,7 +5,7 @@ import java.io.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", value = "/servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
 
@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("user", username);
                 response.sendRedirect("home.jsp");
             } else {
-                response.sendRedirect("login.jsp?error=invalid");
+                response.sendRedirect("index.jsp?error=invalid");
             }
         } catch (SQLException e) {
             e.printStackTrace();

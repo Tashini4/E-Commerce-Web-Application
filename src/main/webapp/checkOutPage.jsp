@@ -188,11 +188,11 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="customerDashboard.jsp">Home</a>
         </li>
         <%--dropdown--%>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
+          <a href="productDetails.jsp" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Product</a>
           <div class="dropdown-menu">
             <a href="#" class="dropdown-item">Birthday Cake</a>
             <a href="#" class="dropdown-item">Chocolate Cake</a>
@@ -203,16 +203,16 @@
         </li>
         <%--dropdown--%>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <a class="nav-link" href="cart.jsp">Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Order</a>
+          <a class="nav-link" href="order.jsp">Order</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -244,7 +244,7 @@
 
   <%--Form--%>
     <div class="container-fluid">
-      <form action="" method="" class="mx-auto">
+      <form action="" method="Post" class="mx-auto">
         <div class="mb-3 mt-4">
           <label for="name" class="form-label">Your Name</label>
           <input type="text" class="form-control" id="name" placeholder="enter your name">
@@ -288,7 +288,7 @@
           <label for="code" class="form-label">Pin Code</label>
           <input type="text" class="form-control" id="code" placeholder="enter your pin code">
         </div>
-        <a href="customerdashboard.jsp"><button type="submit" class="btn btn-primary mt-2">Order Now</button></a>
+        <a href="order.jsp"><button type="submit" class="btn btn-primary mt-2">Order Now</button></a>
       </form>
     </div>
   <%--Form--%>

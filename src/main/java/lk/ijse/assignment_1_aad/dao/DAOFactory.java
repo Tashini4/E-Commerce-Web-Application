@@ -18,16 +18,16 @@ public class DAOFactory {
                 return new LoginDAOImpl();
             case CATEGORY:
                 return new CategoryDAOImpl();
-            case ORDER:
-                return new OrderDAOImpl();
-            case CART:
-                return new UserDAOImpl();
+           /* case ORDER:
+                return new OrderDAOImpl();*/
+           /* case CART:
+                return new CartDAOImpl();*/
             case USER:
-                return new Order_detailsDAOImpl();
+                return new UserDAOImpl();
             case PRODUCT:
                 return new ProductDAOImpl();
-            case ORDER_DETAIL:
-                return new Order_detailsDAOImpl();
+            /*case ORDER_DETAIL:
+                return new Order_detailsDAOImpl();*/
             default:
                 return null;
         }
